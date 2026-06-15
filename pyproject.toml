@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "usafiri-mcp"
-version = "0.1.0"
+version = "0.1.1"
 description = "MCP server for Kenya transport — matatu routes, NTSA services, boda-boda licensing, freight logistics, and passenger rights. 5 tools."
 readme = "README.md"
 license = { text = "MIT" }

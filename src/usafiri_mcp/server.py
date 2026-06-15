@@ -2,7 +2,7 @@
 from __future__ import annotations
 from typing import Optional
 from fastmcp import FastMCP
-mcp = FastMCP(name="usafiri-mcp", description="Kenya transport and logistics tools. DEMO data only.")
+mcp = FastMCP(name="usafiri-mcp", instructions="Kenya transport and logistics tools. DEMO data only.")
 
 @mcp.tool(name="matatu_route_finder", description="Find matatu routes between Kenyan towns. DEMO.")
 def matatu_route_finder(origin: str, destination: str) -> dict:

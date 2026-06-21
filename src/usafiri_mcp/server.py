@@ -1,10 +1,10 @@
 """UsafiriMCP — Kenya Transport Navigation (5 tools). All data DEMO."""
 from __future__ import annotations
-from typing import Optional
+from typing import Annotated, Optional
 from fastmcp import FastMCP
 mcp = FastMCP(name="usafiri-mcp", instructions="Kenya transport and logistics tools. DEMO data only.")
 
-@mcp.tool(name="matatu_route_finder", description="Find matatu routes between Kenyan towns. DEMO.")
+@mcp.tool(name="matatu_route_finder", description="Find matatu routes between Kenyan towns. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
 def matatu_route_finder(origin: str, destination: str) -> dict:
     fare_est = {"nairobi_mombasa": 1200, "nairobi_kisumu": 900, "nairobi_nakuru": 350,
                 "nairobi_eldoret": 700, "nairobi_thika": 100, "default": 500}
@@ -15,7 +15,7 @@ def matatu_route_finder(origin: str, destination: str) -> dict:
                 "Online: buupass.com, flixbus", "Apps: Little, Quickbus"],
             "note": "Confirm current fares at departure terminal. NTSA sets maximum fares for some routes."}
 
-@mcp.tool(name="ntsa_services_guide", description="NTSA services guide: driving licence, vehicle inspection, permits. DEMO.")
+@mcp.tool(name="ntsa_services_guide", description="NTSA services guide: driving licence, vehicle inspection, permits. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
 def ntsa_services_guide(service: str) -> dict:
     SERVICES = {
         "driving_licence": {"process": "Apply at tims.ntsa.go.ke. Theory test + practical exam. Fee: KES 3,050",
@@ -36,8 +36,8 @@ def ntsa_services_guide(service: str) -> dict:
     return {"source": "DEMO — tims.ntsa.go.ke for official process", "service": service, **matched,
             "ntsa": "tims.ntsa.go.ke | 0800723474"}
 
-@mcp.tool(name="boda_licensing_guide", description="Boda boda (motorcycle taxi) licensing requirements in Kenya. DEMO.")
-def boda_licensing_guide(county: Optional[str] = None) -> dict:
+@mcp.tool(name="boda_licensing_guide", description="Boda boda (motorcycle taxi, annotations={"readOnlyHint": True, "openWorldHint": False}) licensing requirements in Kenya. DEMO.")
+def boda_licensing_guide(county: Annotated[Optional[str], "County to get boda boda licensing information for."] = None) -> dict:
     return {"source": "DEMO — NTSA/county requirements", "county": county,
             "requirements": ["Class G driving licence (motorcycle)", "PSV licence",
                              "Insurance: Third party minimum KES 3,000/year",
@@ -47,7 +47,7 @@ def boda_licensing_guide(county: Optional[str] = None) -> dict:
             "ntsa_fee": "PSV licence: KES 2,050/year", "insurance": "Jubilee, GA, or APA offer boda policies",
             "sacco_benefit": "SACCO membership provides accident insurance, savings, and loan access."}
 
-@mcp.tool(name="freight_logistics_guide", description="Freight logistics options for Kenya SMEs. DEMO.")
+@mcp.tool(name="freight_logistics_guide", description="Freight logistics options for Kenya SMEs. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
 def freight_logistics_guide(origin: str, destination: str, cargo_type: Optional[str] = "general") -> dict:
     return {"source": "DEMO — prices indicative", "origin": origin, "destination": destination, "cargo": cargo_type,
             "options": [
@@ -61,7 +61,7 @@ def freight_logistics_guide(origin: str, destination: str, cargo_type: Optional[
                  "providers": ["Kenya Railways SGR cargo: www.krsgr.co.ke"]},
             ]}
 
-@mcp.tool(name="transport_rights_query", description="Passenger rights for Kenya public transport. DEMO.")
+@mcp.tool(name="transport_rights_query", description="Passenger rights for Kenya public transport. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
 def transport_rights_query(topic: str) -> dict:
     RIGHTS = {
         "overcharging": "NTSA sets maximum fares. Report overcharging: NTSA 0800723474 or police.",

@@ -6,6 +6,7 @@ mcp = FastMCP(name="usafiri-mcp", instructions="Kenya transport and logistics to
 
 @mcp.tool(name="matatu_route_finder", description="Find matatu routes between Kenyan towns. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
 def matatu_route_finder(origin: str, destination: str) -> dict:
+    """Find matatu (minibus) routes, fare estimates, and stages between Kenya towns and Nairobi suburbs."""
     fare_est = {"nairobi_mombasa": 1200, "nairobi_kisumu": 900, "nairobi_nakuru": 350,
                 "nairobi_eldoret": 700, "nairobi_thika": 100, "default": 500}
     key = f"{origin.lower().replace(' ','_')}_{destination.lower().replace(' ','_')}"
@@ -17,6 +18,7 @@ def matatu_route_finder(origin: str, destination: str) -> dict:
 
 @mcp.tool(name="ntsa_services_guide", description="NTSA services guide: driving licence, vehicle inspection, permits. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
 def ntsa_services_guide(service: str) -> dict:
+    """Return NTSA (National Transport and Safety Authority) services, requirements, and processes."""
     SERVICES = {
         "driving_licence": {"process": "Apply at tims.ntsa.go.ke. Theory test + practical exam. Fee: KES 3,050",
                             "documents": ["ID/Passport", "KES 3,050", "Medical certificate", "Passport photo"],
@@ -38,6 +40,7 @@ def ntsa_services_guide(service: str) -> dict:
 
 @mcp.tool(name="boda_licensing_guide", description="Boda boda (motorcycle taxi, annotations={"readOnlyHint": True, "openWorldHint": False}) licensing requirements in Kenya. DEMO.")
 def boda_licensing_guide(county: Annotated[Optional[str], "County to get boda boda licensing information for."] = None) -> dict:
+    """Return motorcycle (boda boda) operator licensing requirements, NTSA registration, and rider rights."""
     return {"source": "DEMO — NTSA/county requirements", "county": county,
             "requirements": ["Class G driving licence (motorcycle)", "PSV licence",
                              "Insurance: Third party minimum KES 3,000/year",
@@ -49,6 +52,7 @@ def boda_licensing_guide(county: Annotated[Optional[str], "County to get boda bo
 
 @mcp.tool(name="freight_logistics_guide", description="Freight logistics options for Kenya SMEs. DEMO.", annotations={"readOnlyHint": True, "openWorldHint": False})
 def freight_logistics_guide(origin: str, destination: str, cargo_type: Optional[str] = "general") -> dict:
+    """Return freight transport options, truck routes, and logistics providers for Kenya."""
     return {"source": "DEMO — prices indicative", "origin": origin, "destination": destination, "cargo": cargo_type,
             "options": [
                 {"mode": "Truck (full load)", "price_range": "KES 15,000–80,000 depending on distance",

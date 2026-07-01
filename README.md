@@ -3,6 +3,14 @@
 [![usafiri-mcp Glama score](https://glama.ai/mcp/servers/gabrielmahia/usafiri-mcp/badges/score.svg)](https://glama.ai/mcp/servers/gabrielmahia/usafiri-mcp)
 [![smithery badge](https://smithery.ai/badge/@gabrielmahia/usafiri-mcp)](https://smithery.ai/server/@gabrielmahia/usafiri-mcp)
 
+
+---
+**Compatible with `claude-sonnet-5`** (released 2026-06-30) — Anthropic's most agentic
+Sonnet yet. Runs multi-step tool chains end-to-end without stopping short.
+Install: `pip install usafiri-mcp` · Use with any MCP client.
+
+---
+
 MCP server for Kenya transport — matatu routes, NTSA services, boda-boda licensing, freight logistics, and passenger rights. 5 tools.
 
 ## Part of the East Africa Coordination Stack

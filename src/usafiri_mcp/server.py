@@ -79,3 +79,7 @@ def transport_rights_query(topic: str) -> dict:
     matched = {k: v for k, v in RIGHTS.items() if k in t or any(w in t for w in k.split("_"))}
     return {"source": "DEMO — Traffic Act, Consumer Protection Act", "topic": topic,
             "rights": matched or RIGHTS, "ntsa": "0800723474", "disclaimer": "Not legal advice."}
+
+def main() -> None:
+    """Console entry point."""
+    mcp.run()

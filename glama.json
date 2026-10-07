@@ -1,8 +1,8 @@
 {
   "$schema": "https://glama.ai/mcp/schemas/1.0.0/server.json",
   "name": "usafiri-mcp",
-  "version": "0.1.0",
-  "description": "MCP server for Kenya transport \u2014 matatu routes, NTSA services, boda-boda licensing, freight logistics, and passenger rights. 5 tools.",
+  "version": "0.1.6",
+  "description": "MCP server for Kenya transport — matatu routes, NTSA services, boda-boda licensing, freight logistics, and passenger rights",
   "license": "MIT",
   "author": {
     "name": "Gabriel Mahia",
@@ -11,7 +11,7 @@
   "tools": [
     {
       "name": "matatu_route_finder",
-      "description": "Find matatu routes",
+      "description": "Find matatu routes between Kenyan towns. DEMO.",
       "annotations": {
         "readOnlyHint": true,
         "destructiveHint": false,
@@ -20,7 +20,7 @@
     },
     {
       "name": "ntsa_services_guide",
-      "description": "NTSA services guide",
+      "description": "NTSA services guide: driving licence, vehicle inspection, permits. DEMO.",
       "annotations": {
         "readOnlyHint": true,
         "destructiveHint": false,
@@ -29,7 +29,7 @@
     },
     {
       "name": "boda_licensing_guide",
-      "description": "Boda licensing requirements",
+      "description": "Boda boda (motorcycle taxi) licensing requirements in Kenya. DEMO.",
       "annotations": {
         "readOnlyHint": true,
         "destructiveHint": false,
@@ -38,7 +38,7 @@
     },
     {
       "name": "freight_logistics_guide",
-      "description": "Freight logistics for SMEs",
+      "description": "Freight logistics options for Kenya SMEs. DEMO.",
       "annotations": {
         "readOnlyHint": true,
         "destructiveHint": false,
@@ -47,7 +47,7 @@
     },
     {
       "name": "transport_rights_query",
-      "description": "Passenger rights",
+      "description": "Passenger rights for Kenya public transport. DEMO.",
       "annotations": {
         "readOnlyHint": true,
         "destructiveHint": false,
@@ -68,5 +68,8 @@
     "mcp",
     "useful-rails",
     "ai-agents"
+  ],
+  "maintainers": [
+    "gabrielmahia"
   ]
 }

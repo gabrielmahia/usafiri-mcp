@@ -1,17 +1,17 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
   "name": "io.github.gabrielmahia/usafiri-mcp",
-  "description": "MCP server for transport coordination in East Africa (usafiri = transport)",
+  "description": "Kenya transport guides: matatu fares, NTSA services, boda licensing, freight, passenger rights.",
   "repository": {
     "url": "https://github.com/gabrielmahia/usafiri-mcp",
     "source": "github"
   },
-  "version": "0.1.7",
+  "version": "0.1.8",
   "packages": [
     {
       "registryType": "pypi",
       "identifier": "usafiri-mcp",
-      "version": "0.1.7",
+      "version": "0.1.8",
       "transport": {
         "type": "stdio"
       }

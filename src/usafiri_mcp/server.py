@@ -1,12 +1,20 @@
 """UsafiriMCP — Kenya Transport Navigation (5 tools). All data DEMO."""
 from __future__ import annotations
 
+from importlib.metadata import PackageNotFoundError
+from importlib.metadata import version as _pkg_version
 from typing import Annotated, Optional
 
 from fastmcp import FastMCP
 from pydantic import Field
 
-mcp = FastMCP(name="usafiri-mcp", instructions="Kenya transport and logistics tools. DEMO data only.")
+try:
+    _VERSION = _pkg_version("usafiri-mcp")
+except PackageNotFoundError:  # a source tree that was never installed
+    _VERSION = "0+unknown"
+
+
+mcp = FastMCP(name="usafiri-mcp", instructions="Kenya transport and logistics tools. DEMO data only.", version=_VERSION)
 
 @mcp.tool(name="matatu_route_finder", description="Estimate a matatu or bus fare between two Kenyan towns and list ways to book. Use when someone asks roughly what a trip costs. Fares come from a table of five Nairobi routes (Mombasa, Kisumu, Nakuru, Eldoret, Thika); any other pair gets a flat KES 500 placeholder and fare_is_placeholder is true. Returns the origin, destination, estimated_fare_kes, fare_is_placeholder, booking options and a note to confirm fares at the terminal. Fares and routes are labelled DEMO and change often. Read-only; no side effects.", annotations={"readOnlyHint": True, "openWorldHint": False})
 def matatu_route_finder(origin: Annotated[str, Field(description="Starting town or suburb, such as Nairobi.")], destination: Annotated[str, Field(description="Destination town, such as Mombasa.")]) -> dict:

@@ -6,12 +6,12 @@
     "url": "https://github.com/gabrielmahia/usafiri-mcp",
     "source": "github"
   },
-  "version": "0.1.10",
+  "version": "0.1.11",
   "packages": [
     {
       "registryType": "pypi",
       "identifier": "usafiri-mcp",
-      "version": "0.1.10",
+      "version": "0.1.11",
       "transport": {
         "type": "stdio"
       }

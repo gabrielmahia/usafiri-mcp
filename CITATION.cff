@@ -3,7 +3,7 @@ message: "If you use this software, please cite it as below."
 type: software
 title: "usafiri-mcp"
 abstract: "MCP server for Kenya transport — matatu routes, NTSA services, boda-boda licensing, freight logistics, and passenger rights. 5 tools."
-version: "0.1.12"
+version: "0.1.13"
 authors:
   - family-names: "Mahia"
     given-names: "Gabriel"
